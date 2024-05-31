@@ -1,0 +1,23 @@
+﻿@model IEnumerable<mvcMovie.Models.Movie.Movie>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <link href="~/css/index.css" rel="stylesheet" />
+</head>
+
+<div class="movie-list">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Details", "Home", new{Id = item.Id})" class="movie-card-body">
+            <img class="movie-card-img" src="@item.ImgLink" alt="@item.Title" />
+            <div class="movie-card-details">
+                <div class="movie-card-title">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </div>
+            </div>
+        </a>
+    }
+</div>
