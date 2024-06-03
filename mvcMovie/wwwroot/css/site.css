@@ -77,3 +77,19 @@ table td a:hover {
     width: 5vw; /* Breedte van de ImgLink-cel aanpassen */
  
 }
+
+
+
+
+
+/*///////////////////////     ACCESS DENIED STYLING         //////////////////////////////////*/
+
+#AD-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////*/

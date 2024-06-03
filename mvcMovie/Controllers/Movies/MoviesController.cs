@@ -22,6 +22,7 @@ namespace mvcMovie.Controllers.Movies
         }
 
         // GET: Movies
+        [Authorize(Roles = "AdminOnly")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Movie.ToListAsync());
@@ -118,8 +119,7 @@ namespace mvcMovie.Controllers.Movies
             return View(movie);
         }
 
-        // GET: Movies/Delete/5
-        [Authorize(Roles = "AdminOnly")]
+        // GET: Movies/Delete/5      
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
