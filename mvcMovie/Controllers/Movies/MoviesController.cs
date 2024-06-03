@@ -11,7 +11,7 @@ using mvcMovie.Models.Movie;
 
 namespace mvcMovie.Controllers.Movies
 {
-    //[Authorize(Policy = "AdminOnly")]
+   
     public class MoviesController : Controller
     {
         private readonly mvcMovieContext _context;
@@ -119,6 +119,7 @@ namespace mvcMovie.Controllers.Movies
         }
 
         // GET: Movies/Delete/5
+        [Authorize(Roles = "AdminOnly")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
