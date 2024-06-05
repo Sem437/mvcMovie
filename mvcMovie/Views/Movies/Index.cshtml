@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<form asp-controller="Movies" asp-action="Index">
+    <div class="searchBar-div">
+        <input class="searchBar-contents" type="text" id="searchBar" name="MovieTitle" />
+        <input class="searchBar-contents" type="submit" value="Search" />
+    </div>
+</form>
+
 <h1>Index</h1>
 
 <p>

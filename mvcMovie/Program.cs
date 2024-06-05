@@ -20,17 +20,6 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-// zorgt ervoor dat /movies niet toegankelijk is///////////////////////////////
-
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminOnly", policy =>
-        policy.Requirements.Add(new AdminRequirement()));
-});
-
-builder.Services.AddSingleton<IAuthorizationHandler, AdminRequirementHandler>();
-///////////////////////////////////////////////////////////////////////////////
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -8,6 +8,15 @@
     <link href="~/css/index.css" rel="stylesheet" />
 </head>
 
+<form asp-controller="Home" asp-action="Index">
+    <div class="searchBar-div">
+        <input class="searchBar-contents" type="text" id="searchBar" name="MovieTitle" />
+        <button class="searchBar-contents" type="submit" id="searchButton">
+            <ion-icon name="search-outline"></ion-icon>
+        </button>
+    </div>
+</form>
+
 <div class="movie-list">
     @foreach (var item in Model)
     {

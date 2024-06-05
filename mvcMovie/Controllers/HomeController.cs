@@ -22,9 +22,22 @@ namespace mvcMovie.Controllers
         }
         */
         // GET: Movies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string MovieTitle)
         {
-            return View(await _context.Movie.ToListAsync());
+            if (_context.Movie == null)
+            {
+                return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
+            }
+
+            var movies = from m in _context.Movie
+                         select m;
+
+            if (!String.IsNullOrEmpty(MovieTitle))
+            {
+                movies = movies.Where(s => s.Title!.Contains(MovieTitle));
+            }
+
+            return View(await movies.ToListAsync());
         }
 
         public IActionResult Privacy()

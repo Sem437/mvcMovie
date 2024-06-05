@@ -78,18 +78,43 @@ table td a:hover {
  
 }
 
+.searchBar-div
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
 
+.searchBar-contents
+{
+    border: 1px solid grey;
+    border-radius: 5px;
 
+}
+
+#searchBar:focus
+{
+    outline: none;
+}
+
+#searchBar {
+    width: 20vw;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+}
+
+#searchButton {
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+}
 
 
 /*///////////////////////     ACCESS DENIED STYLING         //////////////////////////////////*/
 
-#AD-container
-{
+#AD-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////*/
