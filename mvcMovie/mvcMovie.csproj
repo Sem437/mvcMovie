@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <Folder Include="Authorization\NewFolder\" />
+    <Folder Include="wwwroot\MoviesMP4\" />
+    <Folder Include="wwwroot\Img\" />
   </ItemGroup>
 
 </Project>

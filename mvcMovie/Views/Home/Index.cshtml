@@ -10,12 +10,28 @@
 
 <form asp-controller="Home" asp-action="Index">
     <div class="searchBar-div">
-        <input class="searchBar-contents" type="text" id="searchBar" name="MovieTitle" />
-        <button class="searchBar-contents" type="submit" id="searchButton">
-            <ion-icon name="search-outline"></ion-icon>
-        </button>
+        <div class="searchBar-Container">
+            <input  class="searchBar-contents" type="text" id="searchBar" name="MovieTitle" />
+            <button class="searchBar-contents" type="submit" id="searchButton">
+                <ion-icon name="search-outline"></ion-icon>
+            </button>
+        </div>
+
+        <div class="filter-Div">
+            <div class="filter-Container">
+                <div class="filter-Prijs">
+                    <input type="number" class="input-Price" class="input-Filter-Contents" placeholder="0"   min="1"/> 
+                    <input type="number" class="input-Price" class="input-Filter-Contents" placeholder="100" min="2" />
+                    <select>
+                        <option value="Low2High">Low to high</option>
+                        <option value="High2Low">High to low</option>
+                    </select>                   
+                </div>
+            </div>
+        </div>
     </div>
 </form>
+
 
 <div class="movie-list">
     @foreach (var item in Model)

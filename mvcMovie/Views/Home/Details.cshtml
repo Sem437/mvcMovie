@@ -9,8 +9,18 @@
     <link href="~/css/style.css" rel="stylesheet" />
 </head>
 
+
 <div class="details-container">
     <h1 class="movie-title">@Model.Title</h1>
+
+    @if(Model.movieFile != null)
+    {
+        <video controls>
+            <source src="@Model.movieFile" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    }
+
     <div class="movie-info">
         <p><strong>Movie Time:</strong> @Model.MovieTime minutes</p>
         <p><strong>Release Date:</strong> @Model.ReleaseData</p>

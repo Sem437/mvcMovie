@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "jquery-validation@1.20.0",
+      "destination": "wwwroot/lib/jquery-validation/"
+    }
+  ]
+}

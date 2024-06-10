@@ -78,22 +78,43 @@ table td a:hover {
  
 }
 
-.searchBar-div
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.searchBar-div 
 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 50px;
 }
 
-.searchBar-contents
+.searchBar-Container
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+
+.searchBar-contents 
 {
     border: 1px solid grey;
     border-radius: 5px;
-
 }
 
-#searchBar:focus
-{
+.input-Filter-Contents:focus {
+    outline: none;
+}
+
+#searchBar:focus {
     outline: none;
 }
 
@@ -115,6 +136,31 @@ table td a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+:focus
+{
+    outline: none;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+select
+{
+    width: 2vw;
+}
+
+
+
+/*///////////////////////     filter styling         //////////////////////////////////*/
+
+.input-Price
+{
+    width: 60px;
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////*/

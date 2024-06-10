@@ -8,8 +8,21 @@
 
 <form asp-controller="Movies" asp-action="Index">
     <div class="searchBar-div">
-        <input class="searchBar-contents" type="text" id="searchBar" name="MovieTitle" />
-        <input class="searchBar-contents" type="submit" value="Search" />
+        <div class="searchBar-Container">
+            <input class="searchBar-contents" type="text" id="searchBar" name="MovieTitle" />
+            <button class="searchBar-contents" type="submit" id="searchButton">
+                <ion-icon name="search-outline"></ion-icon>
+            </button>
+        </div>
+
+        <div class="filter-Div">
+            <div class="filter-Container">
+                <div class="filter-Prijs">
+                    <input type="number" class="input-Price" class="input-Filter-Contents" placeholder="0" min="1" />
+                    <input type="number" class="input-Price" class="input-Filter-Contents" placeholder="100" min="2" />
+                </div>
+            </div>
+        </div>
     </div>
 </form>
 
