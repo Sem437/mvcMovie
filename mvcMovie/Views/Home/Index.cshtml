@@ -20,12 +20,24 @@
         <div class="filter-Div">
             <div class="filter-Container">
                 <div class="filter-Prijs""0">
+                    <label for="minMovieTime">Time</label>
                     <input type="number" class="input-Price" class="input-Filter-Contents" value="@ViewData["minMovieTime"]" min="1" name="minMovieTime" placeholder="60"/>
                     <input type="number" class="input-Price" class="input-Filter-Contents" value="@ViewData["maxMovieTime"]" min="2" name="maxMovieTime" placeholder="120"/>
-                    <select name="priceOrder">
+                    <input type="range" />
+                    <select name="timeOrder">
+                        <option value="">Select</option>
                         <option value="Low2High">Low to high</option>
                         <option value="High2Low">High to low</option>
                     </select>                   
+                </div>
+
+                <div class="filter-ReleaseDate">
+                    <input type="number" id="releaseYear" name="releaseYear" value="@ViewData["releaseYear"]" min="1900" max="2099" />
+                    <select name="releaseOrder">
+                        <option value="">Select</option>
+                        <option value="new2old">New to old</option>
+                        <option value="old2new">Old to new</option>
+                    </select>
                 </div>
             </div>
         </div>

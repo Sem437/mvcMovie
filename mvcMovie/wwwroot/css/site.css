@@ -110,9 +110,7 @@ video {
     border-radius: 5px;
 }
 
-.input-Filter-Contents:focus {
-    outline: none;
-}
+
 
 #searchBar:focus {
     outline: none;
@@ -130,7 +128,7 @@ video {
 }
 
 
-/*///////////////////////     ACCESS DENIED STYLING         //////////////////////////////////*/
+/*                       ACCESS DENIED STYLING                               */
 
 #AD-container {
     display: flex;
@@ -138,7 +136,8 @@ video {
     align-items: center;
 }
 
-/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+
 
 :focus
 {
@@ -153,11 +152,24 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 
 
-/*///////////////////////     filter styling         //////////////////////////////////*/
+/*                              filter styling                        */
 
 .input-Price
 {
     width: 60px;
 }
 
-/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
+.input-Filter-Contents:focus {
+    outline: none;
+}
+
+.filter-Container{
+   /* border: solid 3px pink; */
+}
+
+.filter-Div{
+   /* border: solid 5px black; */
+}
+
+
+/*///////////////////////////////////////////////////////////////////////////*/

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using mvcMovie.Data;
 using mvcMovie.Models;
 using System.Diagnostics;
@@ -15,14 +16,9 @@ namespace mvcMovie.Controllers
             _logger = logger;
             _context = context;
         }
-        /*
-        public IActionResult Index()
-        {
-            return View();
-        }
-        */
+        
         // GET: Movies
-        public async Task<IActionResult> Index(string MovieTitle, int? minMovieTime, int? maxMovieTime, string priceOrder)
+        public async Task<IActionResult> Index(string MovieTitle, int? minMovieTime, int? maxMovieTime, string timeOrder, int? releaseYear)
         {
             if (_context.Movie == null)
             {
@@ -59,18 +55,25 @@ namespace mvcMovie.Controllers
               
             }
 
-            if(!String.IsNullOrEmpty(priceOrder))
+            if(!String.IsNullOrEmpty(timeOrder))
             {
-                switch (priceOrder) 
+                switch (timeOrder) 
                 {
                     case "Low2High":
-                        movies = movies.OrderBy(m => m.price);
+                        movies = movies.OrderBy(m => m.MovieTime);
                         break;
                     case "High2Low":
-                        movies = movies.OrderByDescending(m => m.price);
+                        movies = movies.OrderByDescending(m => m.MovieTime);
                         break;
                 }
-                ViewData["priceOrder"] = priceOrder;
+                ViewData["priceOrder"] = timeOrder;
+            }
+
+            if(releaseYear.HasValue)
+            {
+                var releaseYearString = releaseYear.Value.ToString();
+                movies = movies.Where(s => s.ReleaseData.ToString().Contains(releaseYearString)); //Contains = %releaseYear%
+                ViewData["releaseYear"] = releaseYear;
             }
 
             return View(await movies.ToListAsync());
