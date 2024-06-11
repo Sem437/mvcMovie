@@ -22,7 +22,7 @@ namespace mvcMovie.Controllers
         }
         */
         // GET: Movies
-        public async Task<IActionResult> Index(string MovieTitle)
+        public async Task<IActionResult> Index(string MovieTitle, int? minMovieTime, int? maxMovieTime, string priceOrder)
         {
             if (_context.Movie == null)
             {
@@ -35,6 +35,42 @@ namespace mvcMovie.Controllers
             if (!String.IsNullOrEmpty(MovieTitle))
             {
                 movies = movies.Where(s => s.Title!.Contains(MovieTitle));
+                ViewData["titleMovie"] = MovieTitle;
+            }
+
+            if (minMovieTime.HasValue)
+            {
+
+                if (minMovieTime.HasValue && maxMovieTime.HasValue)
+                {
+                    movies = movies.Where(s => s.MovieTime >= minMovieTime && s.MovieTime <= maxMovieTime);
+                    ViewData["minMovieTime"] = minMovieTime;
+                    ViewData["maxMovieTime"] = maxMovieTime;
+                }
+                else if (minMovieTime.HasValue)
+                {
+                    movies = movies.Where(s => s.MovieTime >= minMovieTime);
+                    ViewData["minMovieTime"] = minMovieTime;
+                }
+                else if(maxMovieTime < minMovieTime)
+                {
+                    return View(await movies.ToListAsync());
+                }
+              
+            }
+
+            if(!String.IsNullOrEmpty(priceOrder))
+            {
+                switch (priceOrder) 
+                {
+                    case "Low2High":
+                        movies = movies.OrderBy(m => m.price);
+                        break;
+                    case "High2Low":
+                        movies = movies.OrderByDescending(m => m.price);
+                        break;
+                }
+                ViewData["priceOrder"] = priceOrder;
             }
 
             return View(await movies.ToListAsync());

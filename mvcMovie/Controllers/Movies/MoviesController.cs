@@ -23,7 +23,7 @@ namespace mvcMovie.Controllers.Movies
 
         // GET: Movies
         [Authorize(Roles = "AdminOnly")]
-        public async Task<IActionResult> Index(string MovieTitle)
+        public async Task<IActionResult> Index(string MovieTitle, int? minMovieTime, int? maxMovieTime)
         {
             if (_context.Movie == null)
             {
