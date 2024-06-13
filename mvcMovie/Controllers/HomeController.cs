@@ -18,7 +18,8 @@ namespace mvcMovie.Controllers
         }
         
         // GET: Movies
-        public async Task<IActionResult> Index(string MovieTitle, int? minMovieTime, int? maxMovieTime, string timeOrder, int? releaseYear)
+        public async Task<IActionResult> Index(string MovieTitle, int? minMovieTime, int? maxMovieTime, string timeOrder, 
+            int? releaseYear, string releaseOrder, string genreFilter)
         {
             if (_context.Movie == null)
             {
@@ -66,7 +67,7 @@ namespace mvcMovie.Controllers
                         movies = movies.OrderByDescending(m => m.MovieTime);
                         break;
                 }
-                ViewData["priceOrder"] = timeOrder;
+                ViewData["timeOrder"] = timeOrder;
             }
 
             if(releaseYear.HasValue)
@@ -74,6 +75,41 @@ namespace mvcMovie.Controllers
                 var releaseYearString = releaseYear.Value.ToString();
                 movies = movies.Where(s => s.ReleaseData.ToString().Contains(releaseYearString)); //Contains = %releaseYear%
                 ViewData["releaseYear"] = releaseYear;
+            }
+
+            if(!String.IsNullOrEmpty(releaseOrder))
+            {
+                switch(releaseOrder) 
+                {
+                    case "new2old":
+                        movies = movies.OrderByDescending(m => m.ReleaseData);
+                        break;
+                    case "old2new":
+                        movies = movies.OrderBy(m => m.ReleaseData);
+                        break;
+                }
+                ViewData["releaseOrder"] = releaseOrder;
+            }
+
+            if(!String.IsNullOrEmpty(genreFilter))
+            {
+                var genreFilterString = genreFilter.ToString();
+
+                switch(genreFilter)
+                {
+                    case "Action":
+                        movies = movies.Where(s => s.Genre.ToString().Contains(genreFilterString));
+                        break;
+                    case "Crime":
+                        movies = movies.Where(s => s.Genre.ToString().Contains(genreFilterString));
+                        break;
+                    case "Comedy":
+                        movies = movies.Where(s => s.Genre.ToString().Contains(genreFilterString));
+                        break;
+                    case "Science Fiction":
+                        movies = movies.Where(s => s.Genre.ToString().Contains(genreFilterString));
+                        break;
+                }
             }
 
             return View(await movies.ToListAsync());

@@ -5,6 +5,11 @@
     {
       "library": "jquery-validation@1.20.0",
       "destination": "wwwroot/lib/jquery-validation/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "jquery-validate@1.20.0",
+      "destination": "wwwroot/jquery-validate/"
     }
   ]
 }

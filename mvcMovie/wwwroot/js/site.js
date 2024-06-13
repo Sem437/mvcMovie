@@ -2,3 +2,17 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+const filterBtn = document.getElementById("FiltersDiv");
+
+function showFilters()
+{
+    if (filterBtn.style.display === "block") {
+        filterBtn.style.display = "none";
+    }
+    else
+    {
+        filterBtn.style.display = "block";
+    }
+}
+
