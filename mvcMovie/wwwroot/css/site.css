@@ -89,22 +89,10 @@ video {
 
 /*              searchBar                        */
 
-.Links, .Rechts
-{
-    /*border: solid red;*/
+.Links, .Rechts {
     width: 10vw;
     display: flex;
     justify-content: center;
-}
-
-.Filter-Button{
-    border-radius: 10px;
-    width: 4vw;
-    height: 5vh;
-}
-
-.Filter-Button:hover{
-    background-color: darkgray;
 }
 
 .searchBar-div {
@@ -113,20 +101,16 @@ video {
     margin-bottom: 25px;
 }
 
-.searchBar-Container
-{
+.searchBar-Container {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
-.searchBar-contents 
-{
+.searchBar-contents {
     border: 1px solid grey;
     border-radius: 5px;
 }
-
-
 
 #searchBar:focus {
     outline: none;
@@ -143,6 +127,9 @@ video {
     border-bottom-left-radius: unset;
 }
 
+button {
+    border: none;
+}
 
 /*                       ACCESS DENIED STYLING                               */
 
@@ -152,45 +139,102 @@ video {
     align-items: center;
 }
 
-/*////////////////////////////////////////////////////////////////////////////*/
-
-
-
-
-
-:focus
-{
-    outline: none;
-}
-
-button{
-    border: none;
-}
-
 /*                              filter styling                        */
 
-.input-Price
-{
+.input-Price {
     width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin-right: 10px;
 }
 
 .input-Filter-Contents:focus {
     outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.filter-Container{
+.filter-Container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .filter-Div {
     margin-bottom: 50px;
     display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
-.filter-Div div{
+.filter-Div div {
     margin-inline: 10px;
 }
 
+.filter-Prijs, .filter-ReleaseDate, .filter-Genre {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
 
-/*///////////////////////////////////////////////////////////////////////////*/
+.filter-Prijs label, .filter-ReleaseDate label, .filter-Genre label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.Filter-Button {
+    border-radius: 10px;
+    width: 4vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey; /* Changed to light grey */
+    color: black;
+    transition: background-color 0.3s;
+}
+
+    .Filter-Button:hover {
+        cursor: pointer;
+        background-color: grey; /* Darker grey on hover */
+    }
+
+.Filter-Icon {
+    font-size: 24px;
+    color: darkgrey; /* Changed to dark grey for better contrast */
+}
+
+/* General Styles */
+
+select, input[type="number"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+    select:focus, input[type="number"]:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+@media (max-width: 768px) {
+    .filter-Container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Filter-Button {
+        width: 8vw;
+        height: 6vh;
+    }
+
+    .Filter-Icon {
+        font-size: 20px;
+    }
+}
