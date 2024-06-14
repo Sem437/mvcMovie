@@ -21,63 +21,6 @@ body {
   margin-bottom: 60px;
 }
 
-/* Algemene opmaak voor de tabel */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-    /* Stijl voor de headercellen van de tabel */
-table th {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 2px solid #ddd; /* Onderstreping voor de headercellen */
-}
-
-/* Stijl voor de datarijen van de tabel */
-table tbody tr {
-    border-bottom: 1px solid #ddd; /* Onderstreping voor de datarijen */
-}
-
-/* Stijl voor de celinhoud van de tabel */
-table td {
-    padding: 10px;
-    white-space: nowrap; /* Voorkom dat tekst wordt afgebroken */
-    overflow: hidden; /* Verberg eventuele overloop van de celinhoud */
-    text-overflow: ellipsis; /* Toon "..." als de tekst niet past */
-}
-
-/* Stijl voor de bewerkingslinks in de laatste cel */
-table td a {
-    color: #007bff; /* Kleur van de bewerkingslinks */
-    text-decoration: none; /* Verwijder onderstreping van links */
-    margin-right: 10px; /* Ruimte tussen de bewerkingslinks */
-}
-
-/* Stijl voor de hover-effecten op bewerkingslinks */
-table td a:hover {
-    text-decoration: underline; /* Onderstreping bij hover */
-    color: #0056b3; /* Kleurverandering bij hover */
-}
-
-/* Stijl voor de scrollbare celinhoud */
-.movie-title-td,
-.movie-imglink-td,
-.movie-description-td {
-    max-width: 20%; /* Maximale breedte van de celinhoud */
-    overflow: auto; /* Voeg een scrollbar toe als de inhoud te breed of te hoog is */
-}
-
-/* Specifieke stijl voor de titelcel */
-.movie-title-td {
-    width: 20%; 
-}
-
-/* Specifieke stijl voor de ImgLink-cel */
-.movie-imglink-td {
-    width: 5vw; /* Breedte van de ImgLink-cel aanpassen */
- 
-}
-
 video {
     width: 100%;
     height: auto;
@@ -237,4 +180,46 @@ select:focus, input[type="number"]:focus {
     .Filter-Icon {
         font-size: 20px;
     }
+}
+
+
+/*                   Logo                       */
+
+#Logo {
+    height: 40px; /* Hoogte van het logo */
+    margin-right: 10px; /* Ruimte tussen logo en tekst */
+    transition: transform 0.3s; /* Animatie bij hover */
+}
+
+#Logo:hover {
+    transform: scale(1.1); /* Vergroot logo bij hover */
+}
+
+/* Stijl voor de brand-name */
+.brand-name {
+    font-size: 1.5rem; 
+    color: #343a40; 
+    font-weight: bold;
+}
+
+/* Stijl voor de nav-link */
+.nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+
+/* Fade-in animatie */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
 }

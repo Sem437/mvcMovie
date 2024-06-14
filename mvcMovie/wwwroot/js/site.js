@@ -16,3 +16,9 @@ function showFilters()
     }
 }
 
+// animatie voor logo als pagina laad
+document.addEventListener("DOMContentLoaded", function () {
+    const logo = document.getElementById('logoDiv');
+    logo.classList.add('fade-in');
+});
+
