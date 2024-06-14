@@ -46,7 +46,7 @@ namespace mvcMovie.Controllers
                 }
                 else if (minMovieTime.HasValue)
                 {
-                    movies = movies.Where(s => s.MovieTime >= minMovieTime);
+                    movies = movies.Where(s => s.MovieTime == minMovieTime);
                     ViewData["minMovieTime"] = minMovieTime;
                 }
                 else if(maxMovieTime < minMovieTime)
