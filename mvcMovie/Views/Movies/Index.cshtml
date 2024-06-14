@@ -8,19 +8,52 @@
 
 <form asp-controller="Movies" asp-action="Index">
     <div class="searchBar-div">
+        <div class="Links"></div>
         <div class="searchBar-Container">
-            <input class="searchBar-contents" type="text" id="searchBar" name="MovieTitle" />
+            <input class="searchBar-contents" type="text" id="searchBar" value="@ViewData["titleMovie"]" name="MovieTitle" />
             <button class="searchBar-contents" type="submit" id="searchButton">
                 <ion-icon name="search-outline"></ion-icon>
             </button>
         </div>
+        <div class="Rechts">
+            <div onclick="showFilters()" class="Filter-Button">
+                <ion-icon name="options-outline" id="Filter-Icon"></ion-icon>
+            </div>
+        </div>
+    </div>
 
-        <div class="filter-Div">
-            <div class="filter-Container">
-                <div class="filter-Prijs">
-                    <input type="number" class="input-Price" class="input-Filter-Contents" placeholder="0" min="1" />
-                    <input type="number" class="input-Price" class="input-Filter-Contents" placeholder="100" min="2" />
-                </div>
+    <div class="filter-Div" id="FiltersDiv">
+        <div class="filter-Container">
+            <div class="filter-Prijs">
+                <label for="minMovieTime">Time</label>
+                <input type="number" class="input-Price" class="input-Filter-Contents" value="@ViewData["minMovieTime"]" min="1" name="minMovieTime" placeholder="60" />
+                <input type="number" class="input-Price" class="input-Filter-Contents" value="@ViewData["maxMovieTime"]" min="2" name="maxMovieTime" placeholder="120" />
+                <select name="timeOrder">
+                    <option>Select</option>
+                    <option value="Low2High">Low to high</option>
+                    <option value="High2Low">High to low</option>
+                </select>
+            </div>
+
+            <div class="filter-ReleaseDate">
+                <label for="releaseYear">Release year</label>
+                <input type="number" id="releaseYear" name="releaseYear" value="@ViewData["releaseYear"]" min="1900" max="2099" />
+                <select name="releaseOrder">
+                    <option value="">Select</option>
+                    <option value="new2old">New to old</option>
+                    <option value="old2new">Old to new</option>
+                </select>
+            </div>
+
+            <div class="filter-Genre">
+                <label for="genreFilter">Genre</label>
+                <select name="genreFilter">
+                    <option value="">Select</option>
+                    <option value="Action">Action</option>
+                    <option value="Crime">Crime </option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                </select>
             </div>
         </div>
     </div>

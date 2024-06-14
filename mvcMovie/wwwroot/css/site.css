@@ -199,14 +199,14 @@ button {
     transition: background-color 0.3s;
 }
 
-    .Filter-Button:hover {
-        cursor: pointer;
-        background-color: grey; /* Darker grey on hover */
-    }
+.Filter-Button:hover {
+    cursor: pointer;
+    background-color: grey; 
+}
 
 .Filter-Icon {
     font-size: 24px;
-    color: darkgrey; /* Changed to dark grey for better contrast */
+    color: darkgrey; 
 }
 
 /* General Styles */
@@ -217,11 +217,11 @@ select, input[type="number"] {
     border: 1px solid grey;
 }
 
-    select:focus, input[type="number"]:focus {
-        outline: none;
-        border-color: #007bff;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
+select:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 
 @media (max-width: 768px) {
     .filter-Container {
