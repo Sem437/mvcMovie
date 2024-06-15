@@ -22,3 +22,5 @@ document.addEventListener("DOMContentLoaded", function () {
     logo.classList.add('fade-in');
 });
 
+// film toevoegen aan watchList
+

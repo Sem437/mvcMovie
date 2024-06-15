@@ -26,6 +26,18 @@
         <p><strong>Release Date:</strong> @Model.ReleaseData</p>
         <p><strong>Genre:</strong> @Model.Genre</p>
         <p><strong>Price:</strong> @Model.price</p>
+        @if(Model.watchList == false)
+        {
+            <p><button onclick="addMovieToList()">
+                Add to list
+            </button></p>
+        }
+        else
+        {
+            <p><button onclick="RemoveMovieFromList()">
+                Remove from list
+            </button></p>
+        }
     </div>
     <div class="movie-description">
         <p><strong>Description</strong></p>

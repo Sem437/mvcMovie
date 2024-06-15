@@ -11,5 +11,6 @@
         public string ImgLink { get; set; }
         public string Description { get; set; }
         public string? movieFile { get; set; }
+        public bool watchList { get; set; } = false;
     }
 }
