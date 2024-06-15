@@ -1,10 +1,9 @@
-/* ~/Views/Shared/_Layout.cshtml */
+/* ~/css/detailsPage/style.css */
+
 body {
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    height: ;
+    background-color: #f4f4f4; 
 }
+
 
 .details-container {
     display: flex;
@@ -21,15 +20,6 @@ body {
 }
 
 
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
-
 .movie-title {
     font-size: 2em;
     font-weight: bold;
@@ -43,14 +33,14 @@ img {
     width: 100%;
 }
 
-    .movie-info p {
-        margin: 10px 0;
-        font-size: 1.1em;
-    }
+.movie-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
 
-    .movie-info strong {
-        color: #333;
-    }
+.movie-info strong {
+    color: #333;
+}
 
 .movie-description {
     margin-top: 20px;
@@ -59,7 +49,8 @@ img {
     font-size: 1.1em;
 }
 
-    .movie-description p {
-        margin: 10px 0;
-        line-height: 1.5;
-    }
+.movie-description p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+

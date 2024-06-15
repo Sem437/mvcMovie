@@ -29,9 +29,13 @@ video {
 }
 
 
+.nav-item:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s; /* Animatie bij hover */
+}
+
 
 /*              searchBar                        */
-
 .Links, .Rechts {
     width: 10vw;
     display: flex;
@@ -186,13 +190,13 @@ select:focus, input[type="number"]:focus {
 /*                   Logo                       */
 
 #Logo {
-    height: 40px; /* Hoogte van het logo */
-    margin-right: 10px; /* Ruimte tussen logo en tekst */
-    transition: transform 0.3s; /* Animatie bij hover */
+    height: 40px; 
+    margin-right: 10px; 
 }
 
-#Logo:hover {
+#logoDiv:hover {
     transform: scale(1.1); /* Vergroot logo bij hover */
+    transition: transform 0.3s; /* Animatie bij hover */
 }
 
 /* Stijl voor de brand-name */
