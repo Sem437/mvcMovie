@@ -58,12 +58,9 @@ namespace mvcMovie.Migrations
                     b.Property<decimal>("price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<bool>("watchList")
-                        .HasColumnType("bit");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Movie", (string)null);
                 });
 #pragma warning restore 612, 618
         }

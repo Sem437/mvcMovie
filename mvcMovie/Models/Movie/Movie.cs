@@ -10,7 +10,6 @@
         public decimal price { get; set; }
         public string ImgLink { get; set; }
         public string Description { get; set; }
-        public string? movieFile { get; set; }
-        public bool watchList { get; set; } = false;
+        public string? movieFile { get; set; }        
     }
 }
