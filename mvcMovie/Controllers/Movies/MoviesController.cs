@@ -36,7 +36,7 @@ namespace mvcMovie.Controllers.Movies
 
             if (!String.IsNullOrEmpty(MovieTitle))
             {
-                movies = movies.Where(s => s.Title!.Contains(MovieTitle));
+                movies = movies.Where(s => s.Title!.Contains(MovieTitle)); // S is een place holder voor elk element in movies
                 ViewData["titleMovie"] = MovieTitle;
             }
 
